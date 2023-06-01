@@ -1,0 +1,39 @@
+<app-card [title]="title" *ngIf="!isEditable; else editForm">
+  <div class="task-buttons d-flex justify-content-start gap-3 mb-2">
+    <fa-icon
+      *ngIf="canEdit"
+      [icon]="faEdit"
+      (click)="editTask()"
+      role="button"
+    ></fa-icon>
+    <fa-icon
+      *ngIf="canRemove"
+      [icon]="faRemove"
+      (click)="removeTask()"
+      role="button"
+    ></fa-icon>
+  </div>
+  <markdown
+    lineNumbers
+    ngPreserveWhitespaces
+    *ngIf="details !== ''; else showNgContent"
+  >
+    {{ details }}
+  </markdown>
+  <ng-template #showNgContent>
+    <ng-content></ng-content>
+  </ng-template>
+</app-card>
+
+<ng-template #editForm>
+  <app-task-form
+    [taskListId]="taskListId"
+    [boardId]="boardId"
+    [title]="title"
+    [details]="details"
+    [taskId]="taskId"
+    (cancel)="closeForm($event)"
+    (change)="editedTask($event)"
+  >
+  </app-task-form>
+</ng-template>

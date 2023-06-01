@@ -1,0 +1,23 @@
+<div class="task-list">
+  <section class="task-header">
+    <h2 class="text-center">Create new task list</h2>
+  </section>
+  <section class="task-body">
+    <form class="flex-form" [formGroup]="newTaskListForm" (submit)="saveForm()">
+      <div class="m-3">
+        <input
+          formControlName="name"
+          type="text"
+          id="name"
+          class="form-control"
+          placeholder="Name"
+        />
+      </div>
+
+      <div class="btn-group m-3">
+        <button class="btn create" type="submit">Create</button>
+        <button class="btn cancel" (click)="cancelForm()">Cancel</button>
+      </div>
+    </form>
+  </section>
+</div>
