@@ -1,0 +1,9 @@
+.card {
+  border: none;
+  height: 100%;
+  background-color: #c74b50;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
