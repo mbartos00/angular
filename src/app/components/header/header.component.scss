@@ -1,0 +1,23 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #393646;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-inline: 1rem;
+  div {
+    width: 100%;
+    display: inherit;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      margin-bottom: 0;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
