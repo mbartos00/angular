@@ -1,0 +1,13 @@
+.boards-grid {
+  margin: 40px 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(21em, auto));
+  .board-item {
+    display: flex;
+    justify-content: center;
+
+    .new-board {
+      cursor: pointer;
+    }
+  }
+}

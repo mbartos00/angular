@@ -1,0 +1,15 @@
+<app-board>
+  <form [formGroup]="newBoardForm" (submit)="saveForm()">
+    <input
+      formControlName="name"
+      type="text"
+      id="name"
+      class="form-control my-2"
+      placeholder="Name"
+    />
+    <div class="btn-group">
+      <button class="btn create" type="submit">Create</button>
+      <button class="btn cancel" (click)="cancelForm()">Cancel</button>
+    </div>
+  </form>
+</app-board>

@@ -1,0 +1,25 @@
+<div class="boards-grid">
+  <div class="board-item">
+    <app-board
+      *ngIf="!isFormOn; else boardForm"
+      (click)="showForm()"
+      class="new-board"
+    >
+      Add new functionality <fa-icon [icon]="faPlus"> </fa-icon>
+    </app-board>
+
+    <ng-template #boardForm>
+      <app-board-form
+        (change)="updateBoards($event)"
+        (cancel)="closeForm($event)"
+      ></app-board-form>
+    </ng-template>
+  </div>
+</div>
+<div class="boards-grid">
+  <div class="board-item" *ngFor="let board of boards">
+    <a [routerLink]="['board', board.id]">
+      <app-board>{{ board.name }}</app-board>
+    </a>
+  </div>
+</div>
